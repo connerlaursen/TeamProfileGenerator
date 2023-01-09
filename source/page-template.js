@@ -25,17 +25,26 @@ module.exports = team => {
 
     return `
     <!DOCTYPE html>
-    <html lang="en">
-      <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <title>Password Generator</title>
-        <link rel="stylesheet" href="style.css" />
-      </head>
-      
-      <div>
-      ${generateTeam(team)}
-      </div>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Profile Generator</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+
+  <body>
+    
+  <header>
+    <nav class="center">
+    <h1>My Team</h1>
+    </nav>
+  </header>
+
+  <div class="cards">
+  ${generateTeam(team)}
+  </div>
+  
+  </body> 
       `
 }

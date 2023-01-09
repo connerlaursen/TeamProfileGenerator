@@ -1,0 +1,76 @@
+/* standard universal setting */
+
+* {
+    margin:0;
+    padding:0;  
+    box-sizing: border-box;
+  }
+  
+  /* I added some variable colors to use throughout the sheet */
+  :root{
+    --purple: rgb(80, 12, 129);
+    --white: white;
+    --black:black;
+    --silver:rgb(175, 175, 175);
+    --gold: goldenrod;
+    --fade: rgba(0, 0, 0, 0.3)
+  
+  }
+  
+  /* fonts and colors to use throughout body */
+  body {
+    position: relative;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 20px;
+    background-color: var(--white);
+    color: var(--black);
+  }
+ 
+  .cards {
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    border: 5px solid var(--black);
+    color: var(--black);
+    min-height: 300px;
+    max-height: 300px;
+    min-width: 300px;
+    max-width: 300px;
+    align-items: flex-end;
+    padding: 10px 10px 10px 10px;
+    margin: 20px;
+    text-decoration: none;
+    font-size: 1rem;
+    box-shadow: 1px 1px 20px var(--black);
+
+  }
+  .center {
+    text-align: center;
+  }
+  
+  /* this header and footer design matches my landing page and portfolio */
+  header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    background-color: var(--purple);
+    line-height: 73px;
+    border-bottom: 10px solid var(--gold);
+    color: var(--white)
+  }
+  
+  
+  
+
+  
+
+  
+  
+  
+  
+  
+  
+  
