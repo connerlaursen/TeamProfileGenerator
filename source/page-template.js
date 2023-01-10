@@ -1,4 +1,4 @@
-const generateTeam = team => {
+    const generateTeam = team => {
 
     const generateManager = manager => {
 
@@ -42,7 +42,7 @@ return `
     </header>
 
   <div class="cards">
-  ${generateTeam(team)}
+  
   </div>
   
   </body> 
