@@ -70,21 +70,6 @@ const myTeam = [
 
 ]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 function teamBuild (){
 
     if (!fs.existsSync(DIST_DIR)){

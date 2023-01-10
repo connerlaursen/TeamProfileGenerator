@@ -23,28 +23,29 @@ const generateTeam = team => {
 
 module.exports = team => {
 
-    return `
+return `
     <!DOCTYPE html>
-<html lang="en">
-  <head>
+    <html lang="en">
+     <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Team Profile Generator</title>
     <link rel="stylesheet" href="../style.css" />
-  </head>
+    </head>
 
-  <body>
+    <body>
     
-  <header>
+    <header>
     <nav class="center">
     <h1>My Team</h1>
     </nav>
-  </header>
+    </header>
 
   <div class="cards">
   ${generateTeam(team)}
   </div>
   
   </body> 
+  </html>
       `
 }
