@@ -17,7 +17,16 @@ const DIST_DIR = path.resolve(__dirname, "dist")
 
 const distPath = path.join(DIST_DIR, "index.html")
 
+const blankArray = [];
+
 const myTeam = [
+    {
+        type:"list",
+        name:"nextEmployee",
+        message:"Would you like to add another employee?",
+        choices:["Yes", "No"]
+    
+    },
     {
         type:"list",
         name:"role",
@@ -50,13 +59,6 @@ const internQuestions = [
         name:"school",
         message:"What is their school name?"
     
-    },
-    {
-        type:"list",
-        name:"nextEmployee",
-        message:"Would you like to add another employee?",
-        choices:["Yes", "No"]
-    
     }
 
 ];
@@ -84,14 +86,8 @@ const engineerQuestions = [
         name:"github",
         message:"What is their github username?"
     
-    },
-    {
-        type:"list",
-        name:"nextEmployee",
-        message:"Would you like to add another employee?",
-        choices:["Yes", "No"]
-    
     }
+
 
 ];
 const managerQuestions = [
@@ -118,44 +114,11 @@ const managerQuestions = [
         name:"office",
         message:"What is their office number?"
     
-    },
-    {
-        type:"list",
-        name:"nextEmployee",
-        message:"Would you like to add another employee?",
-        choices:["Yes", "No"]
-    
     }
+    
 
 ];
 
-
-
-const renderedHtml = `
-<!DOCTYPE html>
-<html lang="en">
- <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Team Profile Generator</title>
-<link rel="stylesheet" href="../style.css" />
-</head>
-
-<body>
-
-<header>
-<nav class="center">
-<h1>My Team</h1>
-</nav>
-</header>
-
-<div class="cards">
-
-</div>
-
-</body> 
-</html>
-  `
 
 function teamBuild (){
 
@@ -163,17 +126,15 @@ function teamBuild (){
         fs.mkdirSync(DIST_DIR)
 
     }
-    fs.writeFileSync(distPath, renderHTML(), "utf-8")
+    fs.writeFileSync(distPath, renderHTML(blankArray), "utf-8")
 }
 
-teamBuild()
 
 function init(){
     inquirer.prompt(myTeam).then((userData)=> {
-        console.log("Generating team cards...")
         console.log(userData);
-        if (userData.nextEmployee == 'Yes'){
-            init()
+        if (userData.nextEmployee === 'No'){
+            teamBuild()
         }
         if (userData.role == 'Intern') {
             inquirer.prompt(internQuestions)
@@ -184,7 +145,26 @@ function init(){
         if (userData.role == 'Engineer') {
             inquirer.prompt(engineerQuestions)
         }
+        
     })};
 
 
+
+function pushManager(){
+    inquirer.prompt(managerQuestions).then(answers)
+    const newManager = Manager(answers.name,answers.email,answers.id,answers.office)
+    blankArray.push(newManager)
+};
+
+function pushEngineer(){
+    inquirer.prompt(engineerQuestions).then(answers)
+    const newEngineer = Engineer(answers.name,answers.email,answers.id,answers.github)
+    blankArray.push(newEngineer)
+};
+
+function pushIntern(){
+    inquirer.prompt(internQuestions).then(answers)
+    const newIntern = Intern(answers.name,answers.email,answers.id,answers.school)
+    blankArray.push(newIntern)
+};
 init();
