@@ -23,6 +23,7 @@
 
 module.exports = team => {
 
+    // returns html file
 return `
 <!DOCTYPE html>
 <html lang="en">

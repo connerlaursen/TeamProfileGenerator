@@ -17,3 +17,5 @@ test("getRole should return the Intern's school in a string from the getSchool f
     const e = new Intern("string", 1, "string", school)
     expect(e.getSchool()).toBe(school)
 });
+
+// intern test functions

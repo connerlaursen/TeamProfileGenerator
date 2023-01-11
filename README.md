@@ -40,5 +40,5 @@ The license being used for the project is MIT ![GitHub license](https://img.shie
 
 ## WalkthroughVideo
     
-Here is a link to the walkthrough video: 
+Here is a link to the walkthrough video: https://drive.google.com/file/d/1MtjBScdrJo6b3RM9v8HN5y8Z6E6remLX/view
 

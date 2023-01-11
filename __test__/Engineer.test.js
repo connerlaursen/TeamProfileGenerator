@@ -18,3 +18,4 @@ test("getRole should return the Engineer's github username in a string from the 
     expect(e.getGithub()).toBe(github)
 });
 
+// engineer test functions

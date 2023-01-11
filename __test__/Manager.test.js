@@ -17,3 +17,5 @@ test("getRole should return the Managers office number in a string from the getO
     const e = new Manager("string", 1, "string", office)
     expect(e.getOffice()).toBe(office)
 });
+
+// manager test functions

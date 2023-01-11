@@ -46,3 +46,5 @@ test("getRole should return the Employee in a string", () => {
     const e = new Employee("string", 1, "string")
     expect(e.getRole()).toBe(role)
 });
+
+// employee test functions

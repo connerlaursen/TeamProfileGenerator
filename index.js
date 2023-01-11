@@ -1,4 +1,4 @@
-
+// inquirer required
 const inquirer = require('inquirer');
 
 const fs=require("fs")
@@ -18,7 +18,7 @@ const DIST_DIR = path.resolve(__dirname, "dist")
 const distPath = path.join(DIST_DIR, "index.html")
 
 const blankArray = [];
-
+// prompted questions below
 const myTeam = [
     {
         type:"list",
@@ -119,7 +119,7 @@ const managerQuestions = [
 
 ];
 
-
+//  generates html based on page-template.js
 function teamBuild (){
 
     if (!fs.existsSync(DIST_DIR)){
@@ -129,7 +129,7 @@ function teamBuild (){
     fs.writeFileSync(distPath, renderHTML(blankArray), "utf-8")
 }
 
-
+// prompts different roles based on role selection
 function init(){
     inquirer.prompt(myTeam).then((userData)=> {
         console.log(userData);
@@ -148,7 +148,7 @@ function init(){
         
     })};
 
-
+// this is supposed to push data to blank array to be appended in html cards
 
 function pushManager(){
     inquirer.prompt(managerQuestions).then(answers)
